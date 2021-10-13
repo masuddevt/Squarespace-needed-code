@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<div class="containery">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="testimonial-slider" class="owl-carousel">
+                <div class="testimonial">
+                    <p class="description">
+                        I had this old fuse box. It was always giving me a headache. Jeff replaced the fuses with circuit breakers and replaced the old frayed cable all the way up to the top of my house. Since Jeff worked on it last year, it’s been working perfectly. I’m so grateful!
+                    </p>
+                    <img src="" alt="">
+                    <h3 class="title">Tia R.</h3>
+                    <span class="post">Warrington, PA</span>
+                </div>
+                <div class="testimonial">
+                    <p class="description">
+                        Home Sweet Home did a very good job. They were very professional, and they knew what they were doing. They kept the place clean, and they did more than most people could expect. I had them do some drywall patching and painting, and they were just exceptional.
+                    </p>
+                    <img src="" alt="">
+                    <h3 class="title">Amy P</h3>
+                    <span class="post">Hatboro, PA</span>
+                </div>
+                <div class="testimonial">
+                    <p class="description">
+                        Jeff has done many jobs for me over the years. Upgraded my electric line outside and circuit breaker panel, landscaping, power washing, and drywall patch repairs and painting. I highly recommend him and his team. 
+                    </p>
+                    <img src="" alt="">
+                    <h3 class="title">Chester H </h3>
+                    <span class="post">Philadelphia, PA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+
+.testimonial{
+    text-align: center;
+    margin: 0 15px;
+}
+.testimonial .description{
+    padding: 15px;
+    padding-bottom:20px;
+    margin: 0;
+    border-top: 4px solid #73438f;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    color: #454646;
+    line-height: 30px;
+    position: relative;
+}
+.testimonial .description:after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #73438f;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+}
+
+.testimonial .title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px 0;
+    margin-top: 20px;
+}
+.testimonial .post{
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+.owl-theme .owl-controls{
+    margin-top: 30px;
+}
+.owl-theme .owl-controls .owl-page span{
+    background: #ccc;
+    opacity: 1;
+    transition: all 0.4s ease 0s;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+    background: #73438f;
+}
+</style>
+<script>
+$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:1,
+        paginationSpeed : 1000,
+        itemsDesktop:[1000,3],
+        itemsDesktopSmall:[990,2],
+        itemsTablet:[768,2],
+        itemsMobile:[650,1],
+        pagination:true,
+        navigation:false,
+        autoPlay:true,
+        autoHeight: true
+    });
+});
+</script>
+

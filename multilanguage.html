@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.6.0/css/flag-icon.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function() {
+    /* SETUP MULTI-LANGUAGE */
+    var defaultLanguage = 'en';
+    var lang = location.pathname.split("/")[1];
+    var defaultClass = 'lang-'+defaultLanguage+'';
+    var itemParent = "nav [class*='collection'],nav [class*='folder'],nav [class*='index'],nav [class*='group']";
+    if (lang == "" || lang.length > 2 ){
+      var lang = defaultLanguage;
+    }
+
+    /* ADD LANGUAGE CLASSES */
+    $('a[href="/"]').addClass('lang-'+defaultLanguage+'').parents(itemParent).addClass('lang-'+defaultLanguage+'');
+    $('nav a:link:not([href^="http://"]):not([href^="https://"])').each(function () {
+      var langType = $(this).attr('href').split("/")[1];
+      var multiLanguageClass = 'multilanguage lang-' + langType + '';
+      if (undefined !== langType && langType.length <= 2) 
+        $(this).addClass(multiLanguageClass).parents(itemParent).addClass(multiLanguageClass);
+    });
+    $('nav button').each(function () {
+      var langTypeFolder = $(this).attr('data-controller-folder-toggle').split("/")[0];
+      var multiLanguageClass = 'multilanguage lang-' + langTypeFolder + '';
+      if (undefined !== langTypeFolder && langTypeFolder.length <= 2) 
+        $(this).addClass(multiLanguageClass);
+    });
+
+    /* HOMEPAGE-LOGO LINKS TO PROPER LANGUAGE HOMEPAGE */
+    if (lang == "es") {
+      $('a[href="/"]').attr("href", "/es/inicio/");
+    }
+
+    /* ADD EXCLUSION NAV ITEMS */
+    $('.exclude-me,.exclude-me a').addClass('exclude');
+    $('.sqs-svg-icon--list a,.SocialLinks-link').addClass('exclude');
+
+    /* REMOVE OTHER LANGUAGES AND KEEP EXCLUDED ITEMS */
+    $('.multilanguage:not(".lang-'+lang+',.exclude")').remove();
+
+    /* SETUP LANGUAGE SWITCHER */
+    $('body').prepend('<div class="language"><a href="/en/home" class="lang-en"><span class="flag-icon flag-icon-us"></span></a> <a href="/es/inicio/" class="lang-es"><span class="flag-icon flag-icon-fr"></span></a></div>');
+
+  });
+</script>

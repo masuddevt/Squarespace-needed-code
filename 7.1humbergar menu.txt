@@ -1,0 +1,3 @@
+.header-burger { display:flex!important}
+.header--menu-open .header-menu {opacity: 1!important;visibility: visible!important;}
+.header-nav, .header-actions {visibility:hidden!important}

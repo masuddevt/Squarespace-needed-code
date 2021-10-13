@@ -1,0 +1,180 @@
+<style>
+	.review_sec_area{
+    	display: flex;
+	}
+
+	article.review {
+	    width: 280px;
+	    height: 280px;
+	    flex-shrink: 0;
+	    background-color: #fff;
+	    font-size: 15px;
+	    padding: 16px;
+	    border-radius: 8px;
+	    filter: drop-shadow(0 0 1rem rgba(0,0,0,0.1));
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+	}
+
+	 article.review .review-text {
+	    line-height: 1.5;
+	}
+
+	article.review .review-meta {
+	    display: flex;
+	    align-items: center;
+	}
+
+	article.review .review-meta .meta-avatar .avatar-letters {
+	    width: 42px;
+	    height: 42px;
+	    background-color: #f3f2fc;
+	    border-radius: 100px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    font-size: 18px;
+	    font-weight: bold;
+	    pointer-events: none;
+	}
+
+	article.review .review-meta .meta-info {
+	    margin-left: 8px;
+	}
+	article.review .review-meta .meta-info .person-name {
+	    font-weight: bold;
+	}
+
+	article.review .review-meta .meta-info .person-subtitle {
+	    font-size: 14px;
+	    color: #56547e;
+	    margin-top: 4px;
+	}
+
+	article.review .review-meta .meta-source {
+	    margin-left: auto;
+	}
+
+	body{
+	    background: #ccc;
+	}
+	/* carousel review css  */
+	.block,.block2 {
+	  overflow: hidden;
+	  width: 800px;
+	  margin: 40px auto;
+	  padding-bottom: 20px;
+	}
+	.animation,.animation2 {
+	  width: auto;
+	  height: 100px;
+	  font-size: 0px;
+	}
+	.animation div,.animation2 div {
+	  display: inline-block;
+	  width: auto;
+	  float: none;
+	  padding: 0 10px;
+	}
+</style>
+
+	<!-- Block 2 -->
+	<div class="block2">
+	  <div class="animation2">
+	    <div class="first">
+	      <article class="review">
+		      <div class="review-text">
+		        <p>Amazing support team, the Onboarding process was seamless. The ROI is on the higher side.</p>
+		      </div><!-- .review-text -->
+
+		      <div class="review-meta">
+		        <div class="meta-avatar">
+		                          <div class="avatar-letters">S</div>
+		                      </div><!-- .meta-avatar -->
+		        <div class="meta-info">
+		          <p class="person-name">Syed H</p>
+		          <p class="person-subtitle"></p>
+		        </div><!-- .meta-info -->
+		        <div class="meta-source">
+		                          <img src="logo-capterra.png">
+		                      </div><!-- .meta-source -->
+		      </div><!-- .review-meta -->
+		    </article>
+	    </div>
+	    <div>
+	      <article class="review">
+		      <div class="review-text">
+		        <p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Expedita, asperiores magni doloremque. Pariatur molestiae ab nemo cupiditate expedita perferendis quas, tempore quaerat numquam voluptatum, doloremque consequuntur optio at eaque aperiam fugit beatae nostrum fugiat animi dolor tenetur odio aliquam nisi. Praesentium, quo soluta earum consectetur blanditiis iure maxime voluptates ea.</p>
+		      </div><!-- .review-text -->
+
+		      <div class="review-meta">
+		        <div class="meta-avatar">
+		                          <div class="avatar-letters">S</div>
+		                      </div><!-- .meta-avatar -->
+		        <div class="meta-info">
+		          <p class="person-name">Syed H</p>
+		          <p class="person-subtitle"></p>
+		        </div><!-- .meta-info -->
+		        <div class="meta-source">
+		                          <img src="logo-capterra.png">
+		                      </div><!-- .meta-source -->
+		      </div><!-- .review-meta -->
+		    </article>
+	    </div>
+	    <!-- cut -->
+	  </div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<script>
+					// block2
+			$(window).on('load', function(){
+			  // Please run it with window.onload, not with document.ready
+			  initSmoothScrolling('.block2','smoothscroll');
+			});
+
+			function initSmoothScrolling(container,animation2){
+			 /*
+				* @param {String} container Class or ID of the animation container
+				* @param {String} animation Name of the animation, e.g. smoothscroll
+				*/
+				var sliderWidth = 0;	
+				var animationWidth = 0;	
+				var sliderHeight = $('>div>div:first-of-type',container).outerHeight(false);
+
+				$('>div>div', container).each(function(){				
+					animationWidth += $(this).outerWidth(false);		
+				});
+				
+				// detect number of visible slides
+				var slidesVisible = $(container).width() / $('>div>div:first-of-type',container).outerWidth(false);	
+				slidesVisible = Math.ceil(slidesVisible);
+
+			  // count slides to determine animation speed
+				var slidesNumber = $('>div>div', container).length;
+				var speed = slidesNumber*13;
+				
+			// append the tail	
+				$('>div>div',container).slice(0,slidesVisible).clone().appendTo($('>div',container));	
+
+				// Detect the slider width with appended tail
+				$('>div>div', container).each(function(){
+					sliderWidth += $(this).outerWidth(false);
+				});
+
+				// set slider dimensions
+				$('>div',container).css({'width':sliderWidth,'height':sliderHeight});
+			  
+			// Insert styles to html
+				$("<style type='text/css'>@keyframes "+animation2+" { 0% { margin-right: 0px; } 100% { margin-left: +"+animationWidth+"px; } } "+$('>div>div:first-of-type',container).selector+" { -webkit-animation: "+animation2+" "+speed+"s linear infinite; -moz-animation: "+animation2+" "+speed+"s linear infinite; -ms-animation: "+animation2+" "+speed+"s linear infinite; -o-animation: "+animation2+" "+speed+"s linear infinite; animation: "+animation2+" "+speed+"s linear infinite; }</style>").appendTo("head");	
+
+				// restart the animation (e.g. for safari & ie)	
+				var cl = $(container).attr("class");
+				$(container).removeClass(cl).animate({'nothing':null}, 1, function () {
+					$(this).addClass(cl);
+				});
+			}
+	</script>

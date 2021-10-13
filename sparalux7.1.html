@@ -1,0 +1,26 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+<script> 
+  $('.has-background:not(:has(.sqs-video-background))').each(function() {
+    var findImage = $(this).find('.section-background img');
+    var imgUrl = findImage.data('src') + '?format=2500w';
+    var dimensions = findImage.data('image-dimensions');
+    var imgWidth = dimensions.substr(0, dimensions.indexOf('x'));
+    var imgHeight = dimensions.substr(dimensions.indexOf('x') + 1);
+    $(this).parallax({
+        bleed: 0,
+        imageSrc: imgUrl,
+        naturalWidth: imgWidth,
+        naturalHeight: imgHeight,
+        speed: .5,
+    })
+});
+document.getElementsByTagName("body")[0].onresize = function() {
+    setTimeout(function() {
+        jQuery(window).trigger('resize').trigger('scroll')
+    }, 100)
+}; 
+</script>
+
+<style>.has-background{background-color:transparent!important}.has-background .section-background{background-color:transparent!important}.has-background .section-background img{visibility:hidden!important}.has-background.background-width--inset{margin:4vw;padding:0!important}.has-background.background-width--inset:not(.content-collection):not(.gallery-section) .section-background{top:0!important;right:0!important;bottom:0!important;left:0!important}</style>

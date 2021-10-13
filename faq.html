@@ -1,0 +1,146 @@
+
+<style type="text/css">
+  
+ul {
+  list-style-type: none;
+}
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+ .accordion {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding-left: 0;
+}
+
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 2px;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+  border-bottom: 0;
+}
+
+.accordion li i {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font-size: 18px;
+  color: #595959;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+  right: 12px;
+  left: auto;
+  font-size: 16px;
+}
+
+.accordion li.open .link {
+  color: #b63b4d;
+}
+
+.accordion li.open i {
+  color: #b63b4d;
+}
+.accordion li.open i.fa-chevron-down {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.accordion li.default .submenu {
+  display: block;
+}
+/**
+ * Submenu
+ -----------------------------*/
+ .submenu {
+  display: none;
+  background: #444359;
+  font-size: 14px;
+   padding:20px;
+   color:#fff;
+ }
+</style>
+
+  <!-- Contenedor -->
+  <ul id="accordion" class="accordion">
+    <li>
+      <div class="link">How quickly will my order be dispatched?<i class="fa fa-chevron-down"></i></div>
+      <ul class="submenu">
+        <p>We aim to dispatch any orders made before 14:00 the same day, otherwise they will be dispatched next working day.</p>
+      </ul>
+    </li>
+    <li class="default open">
+      <div class="link">Are your products really sustainable?<i class="fa fa-chevron-down"></i></div>
+      <ul class="submenu">
+        <p>Yes! We only work with suppliers who are approved by the Global Organic Textile Standards certified, so you can be sure our clothing is sustainable and eco friendly. Check out our ‘Why Organic’ page for more information.</p>
+      </ul>
+    </li>
+    <li>
+      <div class="link">What if I haven’t received my order?<i class="fa fa-chevron-down"></i></div>
+      <ul class="submenu">
+        <p>If you haven’t received an order, please contact us or send us a DM on Instagram, and we’ll look into it.</p>
+      </ul>
+    </li>
+    <li><div class="link">How do you package your products?<i class="fa fa-chevron-down"></i></div>
+      <ul class="submenu">
+        <p>Our clothing is sent loosely folded in compostable, plastic free mailing bags, which can be disposed of in household food waste. Our tags are recyclable, as is the hemp twine used to attach it.</p>
+      </ul>
+    </li>
+
+    <li><div class="link">Can I change an order I’ve already placed?<i class="fa fa-chevron-down"></i></div>
+      <ul class="submenu">
+        <p>If you need to change an order, please let us know as soon as possible through the contact us page. </p>
+      </ul>
+    </li>
+    
+  </ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  var Accordion = function(el, multiple) {
+    this.el = el || {};
+    this.multiple = multiple || false;
+
+    // Variables privadas
+    var links = this.el.find('.link');
+    // Evento
+    links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+  }
+
+  Accordion.prototype.dropdown = function(e) {
+    var $el = e.data.el;
+      $this = $(this),
+      $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    if (!e.data.multiple) {
+      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+    };
+  } 
+
+  var accordion = new Accordion($('#accordion'), false);
+});
+</script>

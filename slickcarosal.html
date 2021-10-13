@@ -1,0 +1,207 @@
+<!-- Testimonial Carousel -->
+    <div class="testimonial-reel">
+        <!-- Testimonial -->
+        <div>
+            <div class="box">
+                <!-- Testimonial Image -->
+                <figure class="image">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png">
+                </figure>
+                <!-- / Testimonial Image -->
+                <div class="test-component">
+                    <article class="test-content">
+                        <p>
+                            I now enjoy financial freedom like I’ve never know before doing what I love.
+                        </p>
+                    </article>
+                  <!-- Title -->
+                    <article class="test-title">
+                        <h3>***** <span>5/5</span></h3>
+                        <h4>
+                            ~ Efecha Omoware
+                        </h4>
+                    </article>
+                    <!-- / Title -->
+                </div>
+            </div>
+        </div>
+        <!-- / Testimonial -->
+
+       <!-- Testimonial -->
+        <div>
+            <div class="box">
+                <!-- Testimonial Image -->
+                <figure class="image">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png">
+                </figure>
+                <!-- / Testimonial Image -->
+                <div class="test-component">
+                    <article class="test-content">
+                        <p>
+                            I now enjoy financial freedom like I’ve never know before doing what I love.
+                        </p>
+                    </article>
+                  <!-- Title -->
+                    <article class="test-title">
+                        <h3>***** <span>5/5</span></h3>
+                        <h4>
+                            ~ Efecha Omoware
+                        </h4>
+                    </article>
+                    <!-- / Title -->
+                </div>
+            </div>
+        </div>
+        <!-- / Testimonial -->
+        <!-- Testimonial -->
+        <div>
+            <div class="box">
+                <!-- Testimonial Image -->
+                <figure class="image">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png">
+                </figure>
+                <!-- / Testimonial Image -->
+                <div class="test-component">
+                    <article class="test-content">
+                        <p>
+                            I now enjoy financial freedom like I’ve never know before doing what I love.
+                        </p>
+                    </article>
+                  <!-- Title -->
+                    <article class="test-title">
+                        <h3>***** <span>5/5</span></h3>
+                        <h4>
+                            ~ Efecha Omoware
+                        </h4>
+                    </article>
+                    <!-- / Title -->
+                </div>
+            </div>
+        </div>
+        <!-- / Testimonial -->
+        <!-- Testimonial -->
+        <div>
+            <div class="box">
+                <!-- Testimonial Image -->
+                <figure class="image">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png">
+                </figure>
+                <!-- / Testimonial Image -->
+                <div class="test-component">
+                    <article class="test-content">
+                        <p>
+                            I now enjoy financial freedom like I’ve never know before doing what I love.
+                        </p>
+                    </article>
+                  <!-- Title -->
+                    <article class="test-title">
+                        <h3>***** <span>5/5</span></h3>
+                        <h4>
+                            ~ Efecha Omoware
+                        </h4>
+                    </article>
+                    <!-- / Title -->
+                </div>
+            </div>
+        </div>
+        <!-- / Testimonial -->
+
+    </div>
+    <!-- / Testimonial Carousel -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<link href="https://sorgalla.com/lity/dist/lity.css" rel="stylesheet"/>
+<script src="https://sorgalla.com/lity/dist/lity.js"></script>
+
+<style>
+.testimonial-reel {
+  margin-bottom: 4rem !important;
+  margin-top: 4rem;
+}
+.testimonial-reel .box {
+  position: relative;
+  margin-bottom: 30px;
+}
+.testimonial-reel .box .image {
+  direction: rtl;
+}
+.testimonial-reel .box .image img {
+  width: 130px;
+}
+.testimonial-reel .box .test-component {
+  background-color: #fff;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-height: 200px;
+}
+.testimonial-reel .box .test-title {
+  color: #f96d02;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.testimonial-reel .box .test-title h3 {
+    font-size: 50px;
+    line-height: 90px;
+    margin: 0;
+}
+.testimonial-reel .box .test-title h4 {
+    font-size: 30px;
+    line-height: 70px;
+    margin: 0;
+}
+.testimonial-reel .box .test-content {
+    text-align: center;
+    color: #000 !important;
+    font-size: 16px;
+    margin-top: 50px;
+}
+.testimonial-reel .slick-slide {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.testimonial-reel .slick-slide.slick-cloned {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.testimonial-reel .slick-slide.slick-current.slick-active {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+</style>
+<!--testimonial-->
+<script>
+//Slick Carousel Controllers
+$(".testimonial-reel").slick({
+  centerMode: false,
+  centerPadding: "40px",
+  dots: true,
+  // autoplay: true,
+  autoplaySpeed: 2000,
+  slidesToShow: 1,
+  infinite: true,
+  arrows: false,
+  lazyLoad: "ondemand",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        centerMode: false
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+</script>

@@ -1,0 +1,57 @@
+<link  src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></link>
+<link  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></link>
+<section class="hero">
+  <div class="hero-text">
+    <p class="text"></p>
+  </div>
+</section>
+
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: tahoma;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.hero {
+  background-color: #333;
+  height: 100vh;
+}
+
+.hero-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px;
+  letter-spacing: 2px;
+}
+.text {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+  color: white;
+}
+</style>
+
+<script type="text/javascript">
+	$(function () {
+  $(".text").typed({
+    strings:["Vladimir Vaize", "Web Developer", "Photoshop", "Coffee Drinker"],
+    typeSpeed: 70,
+    backSpeed: 20,
+    backDelay: 1500,
+    showCursor: true,
+    loop: true
+  });
+});
+</script>

@@ -1,0 +1,55 @@
+//client testimonial
+//testimonial section
+section[data-section-id="60e4505fb2d10014a2b24c1c"] {
+  
+.summary-excerpt {
+    order: 2;
+  p{
+    text-align: center !important;
+  }
+}
+  
+.summary-title {
+    text-align: center !important;
+    order: 5;
+  	margin-top: 10px;
+  a {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+	}
+}
+.summary-content.sqs-gallery-meta-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
+    display: flex;
+    justify-content: center;
+} 
+.sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
+    float: right;
+    width: 100%;
+}
+a.summary-title-link {
+    pointer-events: none;
+}
+.sqs-gallery-design-carousel .sqs-gallery-controls .next, .sqs-gallery-design-carousel .sqs-gallery-controls .previous{
+    padding: 10px;
+    background-color: #efc9b8;
+	}
+  
+  .summary-thumbnail.img-wrapper img {
+    margin-top: 20px;
+    max-width: 150px;
+    height: 150px !important;
+    top: 0 !important;
+    border-radius: 50%;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .summary-thumbnail{
+     padding-bottom: 175px !important;
+  }
+}

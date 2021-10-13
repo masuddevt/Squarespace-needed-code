@@ -1,0 +1,18 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    try {
+     var container = Y.one("#page-section-5f319a27fa5d637772c3c12a"); 
+     var gallery = Y.Squarespace.GalleryManager.getGalleryByContainer(container);
+     gallery.setAttrs({
+       "autoplay":true,
+       "autoplayOptions": {
+         "timeout":2000, /*make this higher to decrease speed, lower to increase it*/
+         "randomize": true
+       }
+     });
+   } catch (e) {
+     console.error("Could not configure Gallery autoplay.", e);
+   }
+});
+</script>

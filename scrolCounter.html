@@ -1,0 +1,88 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+	#counter {
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -30px;
+}
+#counter li {
+  text-align: center;
+  font-size: 50px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-family: fantasy;
+}
+  .count-text{
+  	font-size: 14px;
+    line-height: 28px;
+    margin-top: 15px;
+  }
+</style>
+<div class="counter">
+<ul id="counter">
+  <li>
+    <span class="count" data-count="2100">
+      0
+    </span>
+    <span class="count-text">PROJECTS DONE</span>
+  </li>
+    <li>
+    <span class="count" data-count="200">
+      0
+    </span>
+      <span class="count-text">PEOPLE WORKING</span>
+  </li>
+    <li>
+    <span class="count" data-count="100">
+      0
+    </span>
+      <span class="count-text">BUSINESS PARTNERS</span>
+  </li>
+  <li>
+    <span class="count" data-count="1900">
+      0
+    </span>
+    <span class="count-text">HAPPY CLIENTS</span>
+  </li>
+</ul>
+</div>
+<script>
+	var counted = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (counted == 0 && $(window).scrollTop() > oTop) {
+    $('.count').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    counted = 1;
+  }
+
+});
+</script>

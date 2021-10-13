@@ -1,0 +1,89 @@
+<div class="roww">
+  <div class="coll">
+    <div class="tabs">
+      <div class="tab">
+        <input class="myinput" type="checkbox" id="chck1">
+        <label class="tab-label" for="chck1">Item 1</label>
+        <div class="tab-content">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+	@charset "UTF-8";
+.myinput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.roww {
+  display: flex;
+}
+.roww .coll {
+  flex: 1;
+}
+
+/* Accordion styles */
+.tabs {
+  overflow: hidden;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  border: 1px solid darkgray;
+}
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: darkgray;
+  font-weight: bold;
+  cursor: pointer;
+  /* Icon */
+}
+.tab-label:hover {
+  opacity: 0.8;
+}
+.tab-label::after {
+  content: "❯";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50;
+  background: white;
+  transition: all 0.35s;
+}
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #2c3e50;
+  cursor: pointer;
+}
+.tab-close:hover {
+  background: #1a252f;
+}
+
+input:checked + .tab-label {
+  background: #1a252f;
+}
+input:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
+</style>
